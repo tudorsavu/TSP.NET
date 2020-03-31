@@ -7,7 +7,7 @@ using Model;
 
 namespace ObjectWCF
 {
-    class PhotosAndProperties : IPhotosAndProperties
+    public class PhotosAndProperties : IPhotosAndProperties
     {
         private Api _api;
         public bool AddNewPhoto(string path, DateTime date)
@@ -52,7 +52,12 @@ namespace ObjectWCF
 
         public Dictionary<string, string> GetPropertiesByPath(string path)
         {
-            return _api.GetPropertiesByPath(path);
+            return  _api.GetPropertiesByPath(path);
+        }
+
+        public string Message()
+        {
+            return "Message number 1";
         }
     }
 }

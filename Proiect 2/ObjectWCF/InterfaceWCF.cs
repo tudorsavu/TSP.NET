@@ -40,9 +40,10 @@ namespace ObjectWCF
         Dictionary<string, string> GetPropertiesByPath(string path);
 
     }
-
+    [ServiceContract]
     interface IPhotosAndProperties : IPhotos, IProperties
     {
-
+        [OperationContract]
+        string Message();
     }
 }
