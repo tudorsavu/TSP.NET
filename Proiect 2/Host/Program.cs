@@ -14,10 +14,7 @@ namespace Host
             {
                 host.Open();
 
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
-                host.Description.Behaviors.Add(smb);
+                
 
 
                 Console.WriteLine("Server in executie la http://localhost:4000/PC. Se asteapta conexiuni...");
