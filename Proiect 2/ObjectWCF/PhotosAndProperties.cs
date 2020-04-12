@@ -10,6 +10,11 @@ namespace ObjectWCF
     public class PhotosAndProperties : IPhotosAndProperties
     {
         private Api _api;
+
+        public PhotosAndProperties()
+        {
+            _api= new Api();
+        }
         public bool AddNewPhoto(string path, DateTime date)
         {
             return _api.AddNewPhoto(path, date);
