@@ -139,7 +139,7 @@ namespace Proiect1
                 }
             }
             RemoveListviewItms();
-            foreach (var path in _api.GetSortedListByDate(_sortingDateTime))
+            foreach (var path in client.GetSortedListByDate(_sortingDateTime))
             {
                 LoadPhoto(path);
             }
