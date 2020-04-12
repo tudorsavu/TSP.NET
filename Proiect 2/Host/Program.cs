@@ -14,9 +14,6 @@ namespace Host
             {
                 host.Open();
 
-                
-
-
                 Console.WriteLine("Server in executie la http://localhost:4000/PC. Se asteapta conexiuni...");
                 Console.WriteLine("Apasati Enter pentru a opri serverul!");
                 Console.ReadKey();
