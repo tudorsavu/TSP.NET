@@ -11,7 +11,6 @@ namespace Proiect1
 {
     public partial class PhotoViewer : Form
     {
-        private readonly Api _api;
         private int _imgCount;
         private List<Tuple<string, string>> _newProperties;
         private DateTime _sortingDateTime;
@@ -21,7 +20,6 @@ namespace Proiect1
         {
             client = new PhotosAndPropertiesClient();
             _imgCount = 0;
-            _api = new Api();
             InitializeComponent();
             LoadPhotosOnStart();
 
