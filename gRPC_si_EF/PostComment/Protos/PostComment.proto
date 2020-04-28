@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+
+option csharp_namespace = "PostComment";
+
+package greet;
+
+service PostComment{
+	rpc AddPost (PostModel) returns (BoolResult);
+	rpc UpdatePost (PostModel) returns (PostModel);
+	rpc DeletePost (PostId) returns (IntResult);
+	rpc GetPostById (PostId) returns (PostModel);
+
+	rpc AddComment (CommentModel) returns (BoolResult);
+	rpc UpdateComment (CommentModel) returns (CommentModel);
+	rpc GetCommentById (CommentId) returns (CommentModel);
+}
+
+message CommentModel{
+	int32 CommentId = 1;
+	string Text = 2;
+	int32 PostPostId = 3;
+	PostModel post = 4;
+}
+
+message PostModel{
+	int32 PostId = 1;
+	string Description = 2;
+	string Domain = 3;
+	repeated CommentModel comments = 5;
+}
+
+message PostId{
+	int32 postId = 1;
+}
+
+message CommentId{
+	int32 CommentId = 1;
+}
+
+message PostList{
+	repeated PostModel posts = 1;
+}
+
+message BoolResult{
+	bool result = 1;
+}
+
+message IntResult{
+	int32 result = 1;
+}
