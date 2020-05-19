@@ -47,6 +47,11 @@ namespace ObjectWCF
             _api.RemoveBtPath(path);
         }
 
+        public List<Properties> GetProperties()
+        {
+            return _api.GetProperties();
+        }
+
         public void AddProperties(List<Tuple<string, string>> newProperties, int photoId)
         {
             _api.AddProperties(newProperties, photoId);
@@ -56,6 +61,12 @@ namespace ObjectWCF
         {
             return  _api.GetPropertiesByPath(path);
         }
+
+        public List<Photos> GetPhotosByPropertyName(string name)
+        {
+            return _api.GetPhotosByPropertyName(name);
+        }
+
 
         public string Message(string name)
         {

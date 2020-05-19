@@ -28,11 +28,18 @@ namespace ObjectWCF
 
         [OperationContract]
         void RemoveBtPath(string path);
+
+        [OperationContract]
+        List<Photos> GetPhotosByPropertyName(string name);
     }
 
     [ServiceContract]
     interface IProperties
     {
+
+        [OperationContract]
+        List<Properties> GetProperties();
+
         [OperationContract]
         void AddProperties(List<Tuple<string, string>> newProperties, int photoId);
 
