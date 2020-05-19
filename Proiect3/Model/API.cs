@@ -13,6 +13,11 @@ namespace Model
             _ctx = new Model1Container();
         }
 
+        public List<Properties> GetProperties()
+        {
+            return _ctx.Properties.ToList();
+        }
+
         public List<Photos> GetPhotos()
         {
             return _ctx.Photos.ToList();
@@ -44,6 +49,19 @@ namespace Model
         public DateTime GetDateTimeByPath(string path)
         {
             return _ctx.Photos.Where(p => p.Path == path).Select(p => p.Date).First();
+        }
+
+        public List<Photos> GetPhotosByPropertyName(string name)
+        {
+            var properties = _ctx.Properties.Where(pr => pr.Property_name == name).ToList();
+            
+            var result = new List<Photos>(properties.Count);
+            foreach (var prop in properties)
+            {
+                result.Add(_ctx.Photos.Single(p => p.Id == prop.PhotosId));
+            }
+
+            return result;
         }
 
         public Dictionary<string, string> GetPropertiesByPath(string path)
