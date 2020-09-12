@@ -2,6 +2,8 @@
 
 ![sample](Images/sample1.JPG)
 
+<h2>Adding a new photot</h2>
+
 ![sample](Images/sample2.JPG)
 
 ![sample](Images/sample3.JPG)
